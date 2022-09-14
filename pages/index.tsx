@@ -29,13 +29,13 @@ const Home: NextPage<Props> = ({ time }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1>Home</h1>
-        <p>{time}</p>
+      <main className="w-screen flex flex-col px-4 py-2">
+        <h1 className="text-2xl font-bold">cached time</h1>
+        <p className="text-xl">{time}</p>
       </main>
 
-      <footer>
-        <p>&copy; 2022</p>
+      <footer className="px-4">
+        <p className="text-sm">&copy; 2022</p>
       </footer>
     </div>
   );
