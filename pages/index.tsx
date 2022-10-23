@@ -1,26 +1,7 @@
-import type { GetServerSideProps, NextPage } from "next";
+import type { NextPage } from "next";
 import Head from "next/head";
 
-type Props = {
-  time: string;
-};
-
-export const getServerSideProps: GetServerSideProps<Props> = async ({
-  res,
-}) => {
-  res.setHeader(
-    "Cache-Control",
-    "public, s-maxage=10, stale-while-revalidate=60"
-  );
-
-  return {
-    props: {
-      time: new Date().toISOString(),
-    },
-  };
-};
-
-const Home: NextPage<Props> = ({ time }) => {
+const Home: NextPage = () => {
   return (
     <div>
       <Head>
@@ -30,8 +11,7 @@ const Home: NextPage<Props> = ({ time }) => {
       </Head>
 
       <main className="w-screen flex flex-col px-4 py-2">
-        <h1 className="text-2xl font-bold">cached time</h1>
-        <p className="text-xl">{time}</p>
+        <h1 className="text-2xl font-bold">Top</h1>
       </main>
 
       <footer className="px-4">
